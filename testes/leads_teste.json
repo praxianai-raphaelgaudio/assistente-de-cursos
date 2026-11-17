@@ -1,0 +1,20 @@
+[
+  {"id": "L01", "descricao": "Lead completo e limpo", "esperado": 201,
+   "corpo": {"nome": "Ana Souza", "email": "ana.souza@email.exemplo", "telefone": "11912345678", "curso": "NT-102", "mensagem": "Quero saber as formas de pagamento.", "origem": "site", "consentimento": true}},
+  {"id": "L02", "descricao": "Campos bagunçados, mas válidos", "esperado": 201,
+   "corpo": {"nome": "  carlos  EDUARDO lima ", "email": " Carlos.Lima@Email.EXEMPLO ", "telefone": "(11) 98765-4321", "curso": "nt-201 ", "mensagem": "  Tem turma à noite?  ", "origem": "site", "consentimento": true}},
+  {"id": "L03", "descricao": "Sem e-mail", "esperado": 400,
+   "corpo": {"nome": "Beatriz Ramos", "telefone": "21999990000", "curso": "NT-301", "mensagem": "Me liguem, por favor.", "origem": "site", "consentimento": true}},
+  {"id": "L04", "descricao": "E-mail inválido", "esperado": 400,
+   "corpo": {"nome": "Diego Martins", "email": "diego.martins@", "curso": "NT-302", "mensagem": "Serve para quem nunca programou?", "origem": "site", "consentimento": true}},
+  {"id": "L05", "descricao": "Sem consentimento para contato", "esperado": 400,
+   "corpo": {"nome": "Elisa Prado", "email": "elisa.prado@email.exemplo", "curso": "NT-202", "mensagem": "Só estou pesquisando.", "origem": "site", "consentimento": false}},
+  {"id": "L06", "descricao": "Sem curso e sem telefone (opcionais)", "esperado": 201,
+   "corpo": {"nome": "Fábio Nunes", "email": "fabio.nunes@email.exemplo", "mensagem": "Qual curso vocês indicam para começar?", "origem": "site", "consentimento": true}},
+  {"id": "L07", "descricao": "Telefone com código do país e nome com espaços", "esperado": 201,
+   "corpo": {"nome": "gabriela   torres", "email": "GABI.TORRES@EMAIL.EXEMPLO", "telefone": "+55 (31) 3333-2222", "curso": "NT-303", "mensagem": "Somos 3 da mesma empresa.", "origem": "site", "consentimento": true}},
+  {"id": "L08", "descricao": "Nome curto demais e sem consentimento", "esperado": 400,
+   "corpo": {"nome": "J", "email": "j@email.exemplo", "curso": "NT-101", "mensagem": "oi", "origem": "site"}},
+  {"id": "L09", "descricao": "Curso fora do padrão NT-xxx (variação 6.5)", "esperado": 400, "variacao": true,
+   "corpo": {"nome": "Heitor Alves", "email": "heitor.alves@email.exemplo", "curso": "Python", "mensagem": "Quero o curso de Python.", "origem": "site", "consentimento": true}}
+]

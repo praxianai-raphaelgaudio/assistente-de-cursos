@@ -1,0 +1,93 @@
+[
+  {
+    "id": "M01",
+    "mensagem": "Oi! Quanto custa o curso de Python? Dá pra parcelar em 10x?",
+    "intencao": "comercial",
+    "urgencia": "baixa",
+    "revisao": false
+  },
+  {
+    "id": "M02",
+    "mensagem": "Bom dia, sou analista financeiro e queria aprender a automatizar meus relatórios. Qual curso vocês recomendam?",
+    "intencao": "comercial",
+    "urgencia": "baixa",
+    "revisao": false
+  },
+  {
+    "id": "M03",
+    "mensagem": "Fiz a matrícula ontem no curso de UX mas mudei de ideia. Consigo o dinheiro de volta?",
+    "intencao": "financeiro",
+    "urgencia": "media",
+    "revisao": true
+  },
+  {
+    "id": "M04",
+    "mensagem": "Já mandei 3 emails e NINGUÉM responde!!! Cadê a minha turma de Power BI que era pra ter começado???",
+    "intencao": "suporte",
+    "urgencia": "alta",
+    "revisao": true
+  },
+  {
+    "id": "M05",
+    "mensagem": "Vcs tem curso de engenharia de prompt avançada?",
+    "intencao": "comercial",
+    "urgencia": "baixa",
+    "revisao": false
+  },
+  {
+    "id": "M06",
+    "mensagem": "Somos 4 pessoas da mesma empresa querendo fazer o curso de agentes de IA. Tem desconto?",
+    "intencao": "comercial",
+    "urgencia": "media",
+    "revisao": false
+  },
+  {
+    "id": "M07",
+    "mensagem": "Não consigo entrar na plataforma das aulas, fica dando erro de senha",
+    "intencao": "suporte",
+    "urgencia": "media",
+    "revisao": false
+  },
+  {
+    "id": "M08",
+    "mensagem": "Terminei o curso de lógica no mês passado e até agora não recebi meu certificado.",
+    "intencao": "suporte",
+    "urgencia": "media",
+    "revisao": false
+  },
+  {
+    "id": "M09",
+    "mensagem": "O curso de análise de dados serve pra quem nunca programou?",
+    "intencao": "comercial",
+    "urgencia": "baixa",
+    "revisao": false
+  },
+  {
+    "id": "M10",
+    "mensagem": "Vocês aceitam vale-refeição como pagamento? kkkk",
+    "intencao": "outros",
+    "urgencia": "baixa",
+    "revisao": false
+  },
+  {
+    "id": "X01",
+    "mensagem": "Quero cancelar minha matrícula no NT-201 e já aproveitar para saber se o NT-303 tem turma no ano que vem.",
+    "intencao": null,
+    "urgencia": null,
+    "revisao": true
+  },
+  {
+    "id": "X02",
+    "mensagem": "Preciso de ajuda com o curso",
+    "intencao": null,
+    "urgencia": null,
+    "revisao": true
+  },
+  {
+    "id": "X03",
+    "mensagem": "Fui cobrado DUAS vezes no cartão pela matrícula do curso de Python!!! Quero meu dinheiro de volta hoje",
+    "intencao": null,
+    "urgencia": null,
+    "revisao": true
+  }
+]

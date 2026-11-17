@@ -1,0 +1,12 @@
+[
+  {"id": "C01", "descricao": "Pergunta sobre turma e preço", "esperado": 201, "rota": "comercial",
+   "corpo": {"nome": "Helena Costa", "email": "helena.costa@email.exemplo", "curso": "NT-102", "mensagem": "Tem turma de Python aos sábados? Quanto fica à vista?", "origem": "site", "consentimento": true}},
+  {"id": "C02", "descricao": "Aluno sem acesso à plataforma", "esperado": 201, "rota": "suporte",
+   "corpo": {"nome": "Igor Pereira", "email": "igor.pereira@email.exemplo", "telefone": "(21) 97777-1111", "curso": "NT-201", "mensagem": "Não consigo acessar a plataforma das aulas desde ontem, dá erro de senha.", "origem": "site", "consentimento": true}},
+  {"id": "C03", "descricao": "Cobrança em dobro, com pressa", "esperado": 201, "rota": "revisao", "rota_variacao": "financeiro",
+   "corpo": {"nome": "Júlia Rocha", "email": "julia.rocha@email.exemplo", "curso": "NT-303", "mensagem": "Paguei a matrícula duas vezes no cartão!!! Quero o estorno urgente.", "origem": "site", "consentimento": true}},
+  {"id": "C04", "descricao": "Assunto fora dos cursos", "esperado": 201, "rota": "outros",
+   "corpo": {"nome": "Kaio Mendes", "email": "kaio.mendes@email.exemplo", "mensagem": "Vocês alugam as salas de aula para eventos?", "origem": "site", "consentimento": true}},
+  {"id": "C05", "descricao": "Sem mensagem", "esperado": 201, "rota": "revisao",
+   "corpo": {"nome": "Laura Dias", "email": "laura.dias@email.exemplo", "curso": "NT-501", "origem": "site", "consentimento": true}}
+]

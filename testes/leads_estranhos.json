@@ -1,0 +1,42 @@
+[
+ {
+  "id": "E01",
+  "descricao": "Nome enviado como número",
+  "esperado": 400,
+  "corpo": {
+   "nome": 42,
+   "email": "marcos.lima@email.exemplo",
+   "curso": "NT-101",
+   "mensagem": "Quero saber das turmas de novembro.",
+   "origem": "site",
+   "consentimento": true
+  }
+ },
+ {
+  "id": "E02",
+  "descricao": "Consentimento enviado como texto",
+  "esperado": 400,
+  "corpo": {
+   "nome": "Olívia Santos",
+   "email": "olivia.santos@email.exemplo",
+   "mensagem": "Tem desconto para ex-aluno?",
+   "origem": "site",
+   "consentimento": "sim"
+  }
+ },
+ {
+  "id": "E03",
+  "descricao": "Mensagem longa demais (variação do Lab O)",
+  "esperado": 201,
+  "rota": "comercial",
+  "variacao": true,
+  "corpo": {
+   "nome": "Paulo Mendes",
+   "email": "paulo.mendes@email.exemplo",
+   "curso": "NT-102",
+   "origem": "site",
+   "consentimento": true,
+   "mensagem": "Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar. Quero saber as formas de pagamento do curso de Python e se dá para parcelar."
+  }
+ }
+]
