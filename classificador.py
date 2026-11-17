@@ -9,6 +9,7 @@ Configuração lida do ambiente (Secrets do Codespaces ou arquivo .env): nada de
 import os
 import sys
 import json
+import time
 from typing import Literal
 
 import requests
@@ -58,7 +59,7 @@ MENSAGEM_K = """<mensagem>
 Classifique a mensagem entre as tags <mensagem>."""
 
 
-FORMATO_SAIDA = "responseFormat"  # se a API recusar, troque por "responseJsonSchema"
+FORMATO_SAIDA = "responseJsonSchema"  # "responseFormat" com mimeType application/json dá 400
 
 def config_json(schema):
     """generationConfig que pede JSON no formato do schema."""
@@ -67,18 +68,44 @@ def config_json(schema):
     return {"responseMimeType": "application/json", "responseJsonSchema": schema}
 
 
-# TODO 1: cole aqui a classe Classificacao que você escreveu no notebook (tarefa 2).
+# TODO 1 (resolvido): o contrato da classificação.
 class Classificacao(BaseModel):
-    pass
+    intencao: Literal["comercial", "suporte", "financeiro", "outros"] = Field(
+        description="Para qual equipe a mensagem vai.")
+    urgencia: Literal["baixa", "media", "alta"] = Field(
+        description="Quão rápido a equipe precisa agir.")
+    resumo: str = Field(min_length=1, max_length=200,
+        description="Uma frase, em português, sem nomes, e-mails ou telefones.")
+    precisa_revisao_humana: bool = Field(
+        description="true quando uma pessoa precisa olhar antes de responder.")
+    motivo_revisao: str = Field(default="",
+        description="Por que precisa de revisão; vazio quando não precisa.")
+
+    @model_validator(mode="after")
+    def motivo_quando_revisa(self):
+        if self.precisa_revisao_humana and not self.motivo_revisao.strip():
+            raise ValueError("motivo_revisao é obrigatório quando precisa_revisao_humana é true")
+        return self
 
 
-# TODO 2: cole aqui a função validar do notebook (tarefa 3).
+# TODO 2 (resolvido): texto do modelo -> Classificacao, ou o erro.
 def validar(texto):
-    return None, "TODO"
+    try:
+        return Classificacao.model_validate_json(texto), None
+    except ValidationError as e:
+        return None, str(e)
 
 
-# TODO 3: cole aqui a função aplicar_regras do notebook (tarefa 4).
+# TODO 3 (resolvido): as regras de revisão valem no código, diga o modelo o que disser.
 def aplicar_regras(c):
+    motivos = []
+    if c.urgencia == "alta":
+        motivos.append("urgência alta")
+    if c.intencao == "financeiro":
+        motivos.append("envolve dinheiro de quem já pagou")
+    if motivos and not c.precisa_revisao_humana:
+        return c.model_copy(update={"precisa_revisao_humana": True,
+                                    "motivo_revisao": "Regra: " + " e ".join(motivos) + "."})
     return c
 
 
@@ -96,6 +123,9 @@ def classificar(mensagem, tentativas=2):
         try:
             r = requests.post(f"{BASE_GEMINI}/models/{MODELO}:generateContent",
                               headers={"x-goog-api-key": CHAVE}, json=corpo, timeout=60)
+            if r.status_code in (429, 503):   # cota ou sobrecarga: espera e tenta de novo
+                time.sleep(20)
+                continue
             texto = r.json()["candidates"][0]["content"]["parts"][0]["text"]
         except (requests.RequestException, KeyError, IndexError, ValueError):
             continue

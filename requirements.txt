@@ -1,0 +1,8 @@
+# Assistente de Cursos (Green Belt)
+# Modulo 4, Lab K: classificador
+requests>=2.31
+pydantic>=2.0
+python-dotenv>=1.0
+# Modulo 5, Aula 3: servico do classificador
+fastapi>=0.115
+uvicorn>=0.30
